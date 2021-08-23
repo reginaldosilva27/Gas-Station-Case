@@ -1,4 +1,4 @@
-# Gas Station Case
+# RCS Gas Station Case
 
 Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de filiais espalhadas pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
 
