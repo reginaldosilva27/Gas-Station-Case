@@ -21,14 +21,14 @@ O que veremos nessa lab:
 
 # Descrição do Case
 
-A rede de postos de Gasolina chamada "RCS Gas Station", possui cerca de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming em real-time para a central. A central recebe todos os dados como eventos e centraliza em seus repositórios.
+A rede de postos de gasolina chamada "RCS Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming para a central. A central recebe os dados e centraliza em seus repositórios.
 
 Após os dados serem recebidos pela camada de ingestão, são processados de 3 formas diferentes:
 - Enviados a uma camada RAW do Data Lake, sem nenhuma modificação.
 - Tratados e enviados ao banco de dados Cosmos DB para consumo das APIs
 - Tratados e enviados ao SQL Server (PaaS) para consumo do ERP
 
-Os dados serão processados com Databricks e disponibilizado visões de negócio para visualização no Power BI e também consumo na API do Cosmos DB.
+Os dados serão processados com Databricks e disponibilizado fatos e dimensões para visualização no Power BI e também devolvido métricas ao Cosmos DB para consumo das APIs.
 
 Iremos consumir 3 APIs para cruzamento de dados:
 - Dados de clima
