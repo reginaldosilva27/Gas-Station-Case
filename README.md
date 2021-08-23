@@ -1,6 +1,6 @@
 # Gas-Station-Case
 
-Nessa caso de uso iremos simular uma rede de postos de gasolina espalhados pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
+Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de filiais espalhados pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
 
 O que veremos nessa lab:
 
