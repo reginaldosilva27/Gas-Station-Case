@@ -43,3 +43,20 @@ Iremos consumir 3 APIs para cruzamento de dados:
 - Dados sobre dólar
 - Dados sobre #RCAGASSTATION no Twiter
 -   Aplicar análise de sentimento sobre as redes sociais
+
+# Tecnologias e linguagens utilizadas:
+- Azure Funcion
+- Azure Event Hubs
+- Azure Data Factory
+- Azure Stream Analytics Jobs
+- Azure Cosmos DB
+- Azure SQL Database
+- Azure Storage Account ADSL Gen2
+- Azure Databricks
+- Azure Synapse Serverless
+- Azure Purview
+- Power BI
+- Excel
+- APIs
+- Python
+- SQL
