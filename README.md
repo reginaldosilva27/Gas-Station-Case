@@ -1,10 +1,10 @@
 # Gas Station Case
 
-Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de filiais espalhados pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
+Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de filiais espalhadas pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
 
-O que veremos nessa lab:
+O que veremos nesse projeto:
 
-- Gerar dados FAKE com Python
+- Como gerar dados FAKE com Python
   - Os dados serão customizados para espelhar o mais próximo da realidade
 - Ingestão dos dados gerados por filial (Dados no formato JSON)
   - Ingestão será toda feita pelo Azure Event Hubs
