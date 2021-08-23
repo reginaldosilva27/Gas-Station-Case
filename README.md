@@ -5,9 +5,9 @@ Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de 
 O que veremos nessa lab:
 
 - Gerar dados FAKE com Python
--   Os dados serão customizados para espelhar o mais próximo da realidade
+  - Os dados serão customizados para espelhar o mais próximo da realidade
 - Ingestão dos dados gerados por filial (Dados no formato JSON)
--   Ingestão será toda feita pelo Azure Event Hubs
+  - Ingestão será toda feita pelo Azure Event Hubs
 - Processar e extrair os dados streaming com o Azure Stream Analytics
 - Armazenar os dados processados no Azure Cosmos DB para consumo das APIS
 - Armazenar os dados processados no Azure SQL Database para consumo do ERP centralizado
