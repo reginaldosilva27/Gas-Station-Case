@@ -41,7 +41,7 @@ Os dados serão processados com Databricks e disponibilizado fatos e dimensões 
 Iremos consumir 3 APIs para cruzamento de dados:
 - Dados de clima
 - Dados sobre dólar
-- Dados sobre #RCAGASSTATION no Twiter
+- Dados sobre #RCSGASSTATION no Twiter
 -   Aplicar análise de sentimento sobre as redes sociais
 
 # Tecnologias e linguagens utilizadas:
@@ -60,3 +60,4 @@ Iremos consumir 3 APIs para cruzamento de dados:
 - APIs
 - Python
 - SQL
+
