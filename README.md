@@ -1,4 +1,4 @@
-# Gas-Station-Case
+# Gas Station Case
 
 Nesse caso de uso iremos simular uma rede de postos de gasolina com milhares de filiais espalhados pelo Brasil, para suportar esse workload utilizaremos uma arquitetura de dados moderna e escalável com a Cloud da Microsoft.
 
@@ -23,6 +23,14 @@ O que veremos nessa lab:
 
 A rede de postos de gasolina chamada "RCS Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming para a central. A central recebe os dados e centraliza em seus repositórios.
 
+Em média são gerados 100 eventos por minuto, porém, em casos de promoções a níveil nacional o fluxo de envio de dados poderá chegar a mais de 5 mil registros por minuto.
+
+A central precisa estar preparada para receber esses eventos e tomar decisões em tempo real sobre os dados gerados nas filiais.
+
+# Arquitetura:
+
+O objetivo do desenho acima é prover uma solução escalável para os momentos de pico, como promoções de combustível, possibilitar a geração de insights sobre dados semi-estruturados e estruturados em larga escala, cruzar dados externos de APIs e detectar anomalias em tempo real.
+
 Após os dados serem recebidos pela camada de ingestão, são processados de 3 formas diferentes:
 - Enviados a uma camada RAW do Data Lake, sem nenhuma modificação.
 - Tratados e enviados ao banco de dados Cosmos DB para consumo das APIs
@@ -35,8 +43,3 @@ Iremos consumir 3 APIs para cruzamento de dados:
 - Dados sobre dólar
 - Dados sobre #RCAGASSTATION no Twiter
 -   Aplicar análise de sentimento sobre as redes sociais
-
-# Objetivo da arquitetura:
-
-Prover uma solução escalável para momentos de picos, como promoções de combustível, possibilitar a geração de insights sobre dados semi-estruturados e estruturados em larga escala, cruzar dados externos de APIs e detectar anomalias em tempo real.
-
