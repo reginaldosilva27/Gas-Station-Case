@@ -21,7 +21,7 @@ O que veremos nesse projeto:
 
 # Descrição do Case
 
-A rede de postos de gasolina chamada "RCS Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming para a central. A central recebe os dados e centraliza em seus repositórios.
+A rede de postos de gasolina chamada "RCS Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming para a central. A central recebe os dados e armazena em seus repositórios.
 
 Em média são gerados 100 eventos por minuto, porém, em casos de promoções a níveil nacional o fluxo de envio de dados poderá chegar a mais de 5 mil registros por minuto.
 
