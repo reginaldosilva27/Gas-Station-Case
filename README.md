@@ -23,7 +23,7 @@ O que veremos nesse projeto:
 
 A rede de postos de gasolina chamada "RCS Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema de redundância local, enviando dados via streaming para a central. A central recebe os dados e armazena em seus repositórios.
 
-Em média são gerados 100 eventos por minuto, porém, em casos de promoções a níveil nacional o fluxo de envio de dados poderá chegar a mais de 5 mil registros por minuto.
+Em média são gerados 100 eventos por minuto, porém, em casos de promoções a nível nacional, o fluxo de envio de dados poderá chegar a mais de 5 mil eventos por minuto.
 
 A central precisa estar preparada para receber esses eventos e tomar decisões em tempo real sobre os dados gerados nas filiais.
 
