@@ -52,7 +52,7 @@ Essa arquitetura está focada em receber os dados 100% como streaming de eventos
 
 Referencia: https://docs.microsoft.com/pt-br/azure/architecture/data-guide/big-data/
 
-Também utilizares os conceitos da arquitetura Data Lakehouse, tirando proveito dos recursos e features disponibilizadas pela Databricks com o novo formato e engine de processamento Delta.
+Também utilizaremos os conceitos da arquitetura Data Lakehouse, tirando proveito dos recursos e features disponibilizadas pela Databricks com o novo formato e engine de processamento Delta.
 ![image](https://user-images.githubusercontent.com/69867503/130604840-1104341f-5920-4782-b1e7-987339bf6036.png)
 Referencia: https://databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html
 
