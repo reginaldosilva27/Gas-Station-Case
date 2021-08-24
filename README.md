@@ -11,11 +11,13 @@ O que veremos nesse projeto:
 - Processar e extrair os dados streaming com o Azure Stream Analytics
 - Armazenar os dados processados no Azure Cosmos DB para consumo das APIS
 - Armazenar os dados processados no Azure SQL Database para consumo do ERP centralizado
-- Armazenar os dados no Data lake, gravar no container Bronze no formato parquet
-- Processar os dados com o Databricks, extrair dados da camada Bronze, aplicar limpeza dos dados e armazenar na camada Silver no formato delta
-- Processar dados da camada Silver para camada Gold com as visões para consumo dos usuários finais
+- Armazenar os dados no Data lake, armazenar em uma camada TRANSIENT ZONE com o formato original do dado
+- Processar os dados com o Databricks, transformar os dados no formato PARQUET e copia-lo para a zona RAW ZONE
+- Processar os dados com o Databricks, extrair dados da camada RAW ZONE, aplicar limpeza dos dados e armazenar na camada TRUSTED ZONE no formato delta
+- Processar dados da camada TRUSTED ZONE para a camada REFINED ZONE com as visões de negócio para consumo dos usuários finais
 - Criar integração com Github
 - Automatizar deploy com git actions
+- Automatizar deploy dos recursos com TERRAFORM
 
 ![image](https://user-images.githubusercontent.com/69867503/130528135-9ccc15b8-01f5-4ffa-ac58-0b3db046dc2b.png)
 
