@@ -23,11 +23,13 @@ Referencia: https://www.datainaction.dev/
 
 # Descrição do Case
 
-A rede de postos de gasolina chamada "Datainaction Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema local, enviando dados via streaming para a sede. A sede recebe os dados e armazena em seus repositórios centralizados na Cloud.
+A rede de postos de combustível chamada "Datainaction Gas Station", possui mais de 1000 filiais espalhadas pelo Brasil, as filiais operam com um sistema local, enviando dados via streaming para a sede. A sede recebe os dados e armazena em seus repositórios centralizados na Cloud.
 
 Em média são gerados 1000 eventos por minuto, porém, em casos de promoções a nível nacional, o fluxo de envio de dados poderá chegar a mais de 10 mil eventos por minuto.
 
 A sede precisa estar preparada para receber esses eventos e tomar decisões em tempo real sobre os dados gerados nas filiais.
+
+A Datainaction Gas Station opera sobre o conceito Data Driven, onde, tomas a ações são tomadas com bases nos dados, promoções para usuários específicos, promoções por região, promoções baseadas em alterações climáticas ou por influência do dólar e alterações de preços acontecem automaticamente sem intervenção humana.
 
 Teremos 5 produtos principais e 3 fornecedores diferentes para cada produto.
 - Gasolina
