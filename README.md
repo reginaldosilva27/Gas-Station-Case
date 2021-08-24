@@ -12,8 +12,8 @@ O que veremos nesse projeto:
 - Armazenar os dados processados no Azure Cosmos DB para consumo das APIS
 - Armazenar os dados processados no Azure SQL Database para consumo do ERP centralizado
 - Armazenar os dados no Data lake, armazenar em uma camada TRANSIENT ZONE com o formato original do dado
-- Processar os dados com o Databricks, transformar os dados no formato PARQUET e copia-lo para a zona RAW ZONE
-- Processar os dados com o Databricks, extrair dados da camada RAW ZONE, aplicar limpeza dos dados e armazenar na camada TRUSTED ZONE no formato delta
+- Processar os dados com o Databricks, transformar os dados no formato PARQUET e copia-los para a camada RAW ZONE
+- Processar os dados com o Databricks, extrair dados da camada RAW ZONE, aplicar limpeza dos dados e armazenar na camada TRUSTED ZONE no formato DELTA
 - Processar dados da camada TRUSTED ZONE para a camada REFINED ZONE com as visões de negócio para consumo dos usuários finais
 - Criar integração com Github
 - Automatizar deploy com git actions
