@@ -27,9 +27,26 @@ Em média são gerados 100 eventos por minuto, porém, em casos de promoções a
 
 A central precisa estar preparada para receber esses eventos e tomar decisões em tempo real sobre os dados gerados nas filiais.
 
-# Arquitetura:
+Teremos 5 produtos principais e 3 fornecedores diferentes para cada produto.
+- Gasolina
+- Etanol
+- Diesel
+- Gás Natural
+- Óleo Lubrificante
+
+Cada posto terá 8 bombas ao total.
+
+# Arquitetura
 
 O objetivo do desenho acima é prover uma solução escalável para os momentos de pico, como promoções de combustível, possibilitar a geração de insights sobre dados semi-estruturados e estruturados em larga escala, cruzar dados externos de APIs e detectar anomalias em tempo real.
+
+Dados gerados:
+- Dados de sensores a cada minuto
+- Dados dos pedidos de compra a cada minuto (Saída do estoque)
+- Dados de recarga dos produtos a cada minuto (Entrada no estoque)
+- Dados dos funcionários 1 vez ao dia (Excel)
+- +2 novas filiais serão abertas todos os dias
+- +1000 novos clientes por dia
 
 Após os dados serem recebidos pela camada de ingestão, são processados de 3 formas diferentes:
 - Enviados a uma camada RAW do Data Lake, sem nenhuma modificação.
@@ -44,7 +61,7 @@ Iremos consumir 3 APIs para cruzamento de dados:
 - Dados sobre #RCSGASSTATION no Twiter
 -   Aplicar análise de sentimento sobre as redes sociais
 
-# Tecnologias e linguagens utilizadas:
+# Tecnologias e linguagens utilizadas
 - Azure Funcion
 - Azure Event Hubs
 - Azure Data Factory
