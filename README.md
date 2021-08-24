@@ -18,7 +18,8 @@ O que veremos nesse projeto:
 - Automatizar deploy com git actions
 - Automatizar deploy dos recursos com TERRAFORM
 
-![image](https://user-images.githubusercontent.com/69867503/130528135-9ccc15b8-01f5-4ffa-ac58-0b3db046dc2b.png)
+![image](https://user-images.githubusercontent.com/69867503/130605392-6d817f53-baea-400c-96ce-f0a84fd915ca.png)
+Referencia: https://www.datainaction.dev/
 
 # Descrição do Case
 
