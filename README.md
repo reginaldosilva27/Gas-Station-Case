@@ -36,6 +36,8 @@ Teremos 5 produtos principais e 3 fornecedores diferentes para cada produto.
 
 Cada posto terá 8 bombas ao total.
 
+Os cadastros de clientes, produtos e fornecedores serão globais e únicos.
+
 # Arquitetura
 
 O objetivo do desenho acima é prover uma solução escalável para os momentos de pico, como promoções de combustível, possibilitar a geração de insights sobre dados semi-estruturados e estruturados em larga escala, cruzar dados externos de APIs e detectar anomalias em tempo real.
