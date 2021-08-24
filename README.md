@@ -42,6 +42,9 @@ O objetivo do desenho acima é prover uma solução escalável para os momentos 
 
 Dados gerados:
 - Dados de sensores a cada minuto
+  - Entrada e saída de novos veículos
+  - Sensores de bombas
+  - Sensores de temperatura e fumaça
 - Dados dos pedidos de compra a cada minuto (Saída do estoque)
 - Dados de recarga dos produtos a cada minuto (Entrada no estoque)
 - Dados dos funcionários 1 vez ao dia (Excel)
@@ -59,7 +62,7 @@ Iremos consumir 3 APIs para cruzamento de dados:
 - Dados de clima
 - Dados sobre dólar
 - Dados sobre #RCSGASSTATION no Twiter
--   Aplicar análise de sentimento sobre as redes sociais
+  - Aplicar análise de sentimento sobre as redes sociais
 
 # Tecnologias e linguagens utilizadas
 - Azure Funcion
