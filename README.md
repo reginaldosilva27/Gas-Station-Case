@@ -47,7 +47,9 @@ Os cadastros de clientes, produtos e fornecedores serão globais e únicos.
 O objetivo do desenho acima é prover uma solução escalável para os momentos de pico, como promoções de combustível, possibilitar a geração de insights sobre dados semi-estruturados e estruturados em larga escala, cruzar dados externos de APIs e detectar anomalias em tempo real.
 
 Essa arquitetura está focada em receber os dados 100% como streaming de eventos (Arquitetura Kappa proposta por Jay Kreps) centralizando a lógica de processamento em um único ponto.
+
 ![image](https://user-images.githubusercontent.com/69867503/130604361-feefe535-626e-4048-a176-5bbc37fac7ae.png)
+
 Referencia: https://docs.microsoft.com/pt-br/azure/architecture/data-guide/big-data/
 
 Também utilizares os conceitos da arquitetura Data Lakehouse, tirando proveito dos recursos e features disponibilizadas pela Databricks com o novo formato e engine de processamento Delta.
