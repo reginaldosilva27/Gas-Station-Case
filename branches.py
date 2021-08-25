@@ -7,7 +7,7 @@ from faker import Faker
 fake = Faker('pt_BR')
 
 #declare variables
-HOST = 'https://padariacasedb.documents.azure.com:443/'
+HOST = 'https://xxxx.documents.azure.com:443/'
 MASTER_KEY = 'xxxxxxx'
 DATABASE_ID = 'gasstationdb'
 CONTAINER_ID = 'branches'
