@@ -2,7 +2,7 @@
 
 Nesse projeto iremos simular uma rede de postos de combustíveis movida a dados, essa rede possui milhares de filiais espalhadas pelo Brasil, para suportar essa operação robusta utilizará uma arquitetura de dados moderna e escalável com a Cloud da Microsoft, vamos extrair o potencial dos dados e gerar visualizações e insights para esse negócio.
 
-O objetivo desse projeto é manter uma geração de dados continua, sem intervenção humana, dados que possam ser futuramente explorados e extraído insights.
+O objetivo desse projeto é manter uma geração de dados continua, sem intervenção humana, dados que possam ser futuramente explorados para gerar novos insights.
 
 Anomalias irão ocorrer e vamos aplicar AI para identifica-las e corrigi-las automaticamente, como ajustes em tabelas de preço para aumentar o lucro ou evitar golpes.
 
