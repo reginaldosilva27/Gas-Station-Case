@@ -1,20 +1,28 @@
 #Import modules
-import asyncio, requests, json, datetime, random
+import asyncio, requests, json, datetime, random, pandas as pd, pyodbc
 from azure.eventhub.aio import EventHubProducerClient
 from dateutil.relativedelta import relativedelta
 from azure.eventhub import EventData
 from faker import Faker
 fake = Faker('pt_BR')
 
+server = 'tcp:srv-xxx.database.windows.net' 
+database = 'sql-gasstation' 
+username = 'admingas' 
+password = 'xxx' 
+cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+data = pd.read_sql("SELECT ISNULL(max(id),0) FROM customers", cnxn)
+
 async def run():
     # Create a producer client to send messages to the event hub.
-    producer = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://xxxxx.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxxxx", eventhub_name="customer-topic")
+    producer = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-xxx.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxx", eventhub_name="customer-topic")
     async with producer:
         # Create a batch.
         event_data_batch = await producer.create_batch()
-
+        customerid = int(data.iloc[0][0])
         # Add events to the batch.
-        for x in range(5):
+        for x in range(10):
+            customerid = customerid + 1
             #generates custom data for each gender
             if fake.simple_profile()["sex"] == 'F':
                 firstname = fake.first_name_female()
@@ -50,18 +58,18 @@ async def run():
                 job = 'Estudante'
             #Create JSON
             Customer = {
-                "id": fake.hexify(text='^^^^-^^^^-^^^^-^^^^'),
+                "id": customerid,
                 "cpf": fake.cpf(),
                 "originBranchId": random.randint(1,100),
                 "name": firstname + ' ' + middlename + ' ' + lastname,
                 "loginname": username,
                 "password": fake.password(length=12),
                 "email": email,
-                "birthdate": birthdate.strftime('%Y-%m-%dT%H:%M:%S'),
+                "birthdate": birthdate.strftime('%Y-%m-%d'),
                 "age": age.years,
                 "job": fake.job(),
                 "phone": fake.phone_number(),
-                "sex": sex,
+                "gender": sex,
                 "photo": imagelink,
                 "cars": [{
                     "type": vehiclecategory[vehiclerandom],
@@ -104,7 +112,7 @@ async def run():
 
             event_data_batch.add(EventData(json.dumps(Customer, indent=4)))
             #print(json.dumps(Customer, indent=4))
-            print ("Event sent " + str(x) + " - time: " + datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'))
+            print ("Event sent " + str(customerid) + " - time: " + datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'))
             # Send the batch of events to the event hub.
             await producer.send_batch(event_data_batch)
 
