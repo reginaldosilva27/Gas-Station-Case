@@ -5,20 +5,20 @@ from azure.eventhub import EventData
 from faker import Faker
 fake = Faker('pt_BR')
 
-server = 'tcp:srv-xxx.database.windows.net' 
+server = 'tcp:srv-gasstation.database.windows.net' 
 database = 'sql-gasstation' 
 username = 'admingas' 
-password = 'xxx' 
+password = 'Zzoq5VbylQ2VaL93Hgbw' 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 data = pd.read_sql("SELECT ISNULL(max(id),0) FROM branches", cnxn)
 
 async def run():
     # Create a producer client to send messages to the event hub.
-    producerbranch = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-xxxx.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxx", eventhub_name="branches-topic")
+    producerbranch = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="branches-topic")
     async with producerbranch:
-      event_data_batch = await producerbranch.create_batch()
       branchid = int(data.iloc[0][0])
-      for x in range(10):
+      for x in range(100):
+        event_data_batch = await producerbranch.create_batch()
         branchid = branchid + 1
         date = fake.date_between(start_date='-30y', end_date='today')
         Branch = {
