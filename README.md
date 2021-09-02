@@ -2,6 +2,10 @@
 
 Nesse projeto iremos simular uma rede de postos de combustíveis movida a dados, essa rede possui milhares de filiais espalhadas pelo Brasil, para suportar essa operação robusta utilizará uma arquitetura de dados moderna e escalável com a Cloud da Microsoft, vamos extrair o potencial dos dados e gerar visualizações e insights para esse negócio.
 
+O objetivo desse projeto é manter uma geração de dados continua, sem intervenção humana, dados que possam ser futuramente explorados para gerar novos insights.
+
+Anomalias irão ocorrer e vamos aplicar AI para identifica-las e corrigi-las automaticamente, como ajustes em tabelas de preço para aumentar o lucro ou evitar golpes.
+
 O que veremos nesse projeto:
 
 - Como gerar dados FAKE com Python
@@ -29,16 +33,16 @@ Em média são gerados 1000 eventos por minuto, porém, em casos de promoções 
 
 A sede precisa estar preparada para receber esses eventos e tomar decisões em tempo real sobre os dados gerados nas filiais.
 
-A Datainaction Gas Station opera sobre o conceito Data Driven, onde, tomas a ações são tomadas com bases nos dados, promoções para usuários específicos, promoções por região, promoções baseadas em alterações climáticas ou por influência do dólar e alterações de preços acontecem automaticamente sem intervenção humana.
+A Datainaction Gas Station opera sobre o conceito Data Driven, onde, todas as decisões são tomadas com bases nos dados, promoções para usuários específicos, promoções por região, promoções baseadas em alterações climáticas ou por influência do dólar e alterações de preços acontecem automaticamente sem intervenção humana.
 
-Teremos 5 produtos principais e 3 fornecedores diferentes para cada produto.
+Teremos 5 produtos principais:
 - Gasolina
 - Etanol
 - Diesel
 - Gás Natural
 - Óleo Lubrificante
 
-Cada posto terá 8 bombas ao total.
+Cada posto terá 8 bombas ao total, com sensores para identificar a entrada e saída dos carros e o tempo do atendimento.
 
 Os cadastros de clientes, produtos e fornecedores serão globais e únicos.
 
