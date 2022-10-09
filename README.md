@@ -1,3 +1,5 @@
+# >>This Project is stopped for while<<
+
 # Case - Datainaction Gas Station
 
 Nesse projeto iremos simular uma rede de postos de combustíveis movida a dados, essa rede possui milhares de filiais espalhadas pelo Brasil, para suportar essa operação robusta utilizará uma arquitetura de dados moderna e escalável com a Cloud da Microsoft, vamos extrair o potencial dos dados e gerar visualizações e insights para esse negócio.
