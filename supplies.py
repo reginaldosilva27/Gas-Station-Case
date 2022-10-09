@@ -5,10 +5,10 @@ from azure.eventhub import EventData
 from faker import Faker
 fake = Faker('pt_BR')
 
-server = 'tcp:srv-gasstation.database.windows.net' 
+server = 'tcp:srv-xx.database.windows.net' 
 database = 'sql-gasstation' 
 username = 'admingas' 
-password = 'Zzoq5VbylQ2VaL93Hgbw' 
+password = 'xxxx' 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 data = pd.read_sql("select top 1000 p.id as productid, p.description, i.branchid,i.quantity,(select ISNULL(MAX(id),1) from providers) providerId from inventory i inner join products p on p.id = i.productid where i.quantity < 15000 order by NEWID()", cnxn)
 
@@ -31,7 +31,7 @@ priceswitch = {
 
 async def run():
     # Create a producer client to send messages to the event hub.
-    producer = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="supplies-topic")
+    producer = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxx", eventhub_name="supplies-topic")
     async with producer:
         cont = 0
         for index, x in data.iterrows():
