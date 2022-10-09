@@ -5,18 +5,18 @@ from azure.eventhub import EventData
 from faker import Faker
 fake = Faker('pt_BR')
 
-server = 'tcp:srv-gasstation.database.windows.net' 
+server = 'tcp:srv-xx.database.windows.net' 
 database = 'sql-gasstation' 
 username = 'admingas' 
-password = 'Zzoq5VbylQ2VaL93Hgbw' 
+password = 'xxxx' 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 data = pd.read_sql("select top 100 cpf,originBranchId, cartype,carplate from customers a where exists(select * from pricelist b where a.originBranchId = b.branchId)  order by NEWID()", cnxn)
 pricestable = pd.read_sql("Select * from (select id,branchId,productId,productName,unit,price,date,ROW_NUMBER() over (Partition by branchId,productId order by date desc) as rnk from pricelist) tab where rnk = 1", cnxn)
 
 async def run():
     # Create a producer client to send messages to the event hub.
-    producersensor = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="sensors-topic")
-    producerorder = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="orders-topic")
+    producersensor = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxx", eventhub_name="sensors-topic")
+    producerorder = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxx", eventhub_name="orders-topic")
     async with producersensor:
         async with producerorder:
             #capacidade de litros por tipo de veiculo
