@@ -5,17 +5,17 @@ from azure.eventhub import EventData
 from faker import Faker
 fake = Faker('pt_BR')
 
-server = 'tcp:srv-gasstation.database.windows.net' 
+server = 'tcp:srv-xx.database.windows.net' 
 database = 'sql-gasstation' 
 username = 'admingas' 
-password = 'Zzoq5VbylQ2VaL93Hgbw' 
+password = 'xxxx' 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 data = pd.read_sql("select (select ISNULL(max(id),1000) from products),(select ISNULL(max(id),0) from providers)", cnxn)
 
 async def run():
     # Create a producer client to send messages to the event hub.
-    producerproduct = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="products-topic")
-    producerprovider = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=qcBczD3xI+dxDm2qQ1WKnYeCKMmvErFUqLfcxm2HCPQ=", eventhub_name="provider-topic")
+    producerproduct = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxx", eventhub_name="products-topic")
+    producerprovider = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://eh-gasstation.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xxxx", eventhub_name="provider-topic")
     async with producerprovider:
         async with producerproduct:
             productid = int(data.iloc[0][0])
